@@ -9,7 +9,7 @@ services:
     restart: always
     volumes:
       - /volume1/docker/postgres-nextcloud:/var/lib/postgresql/data
-  archivesspace:
+  nextcloud:
     image: nextcloud:latest
     ports:
       - 8091:80

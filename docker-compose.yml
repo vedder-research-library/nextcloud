@@ -5,7 +5,6 @@ services:
     environment:
       POSTGRES_PASSWORD: "123456"
       POSTGRES_USER: nextcloud
-      POSTGRES_DB: nextcloud
     restart: always
     volumes:
       - /volume1/docker/postgres-nextcloud:/var/lib/postgresql/data

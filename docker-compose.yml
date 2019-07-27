@@ -7,11 +7,11 @@ services:
       POSTGRES_USER: postgres
     restart: always
     volumes:
-      - /volume1/docker/postgres-nextcloud:/var/lib/postgresql/data
+      - /volume1/docker/Nextcloud/postgres-nextcloud:/var/lib/postgresql/data
   nextcloud:
-    image: nextcloud:latest
+    image: nextcloud:16.0.3
     ports:
-      - 8091:80
+      - 3000:80
     depends_on:
       - database
     restart: always
@@ -21,10 +21,10 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: nextcloud
     volumes:
-      - /volume1/docker/main-nextcloud:/var/www/html
-      - /volume1/docker/apps-nextcloud:/var/www/html/custom_apps
-      - /volume1/docker/config-nextcloud:/var/www/html/config
-      - /volume1/docker/data-nextcloud:/var/www/html/data
-      - /volume1/docker/theme-nextcloud:/var/www/html/themes
+      - /volume1/docker/Nextcloud/main-nextcloud:/var/www/html
+      - /volume1/docker/Nextcloud/apps-nextcloud:/var/www/html/custom_apps
+      - /volume1/docker/Nextcloud/config-nextcloud:/var/www/html/config
+      - /volume1/docker/Nextcloud/data-nextcloud:/var/www/html/data
+      - /volume1/docker/Nextcloud/theme-nextcloud:/var/www/html/themes
       - /volume1/Testing/:/testing
 

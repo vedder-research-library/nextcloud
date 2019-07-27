@@ -20,13 +20,11 @@ services:
       POSTGRES_PASSWORD: "123456"
       POSTGRES_USER: postgres
       POSTGRES_DB: nextcloud
-    links:
-      - database
     volumes:
       - /volume1/docker/main-nextcloud:/var/www/html
       - /volume1/docker/apps-nextcloud:/var/www/html/custom_apps
       - /volume1/docker/config-nextcloud:/var/www/html/config
       - /volume1/docker/data-nextcloud:/var/www/html/data
       - /volume1/docker/theme-nextcloud:/var/www/html/themes
-      - /volume1/docker/testing:/testing
+      - /volume1/Testing/:/testing
 
